@@ -46,6 +46,7 @@ trait MongoEmbedDatabase {
             new MongodConfigBuilder()
                 .version(version)
                 .net(new Net(port, Network.localhostIsIPv6()))
+                .cmdOptions(new MongoCmdOptionsBuilder().useNoJournal(false).build())
                 .build()
         )
 }
